@@ -27,6 +27,7 @@ img{max-width:100%;height:auto}
 h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-.02em;text-wrap:balance}
 h1{font-size:40px;line-height:1.06;letter-spacing:-.025em}
 h1 em{font-style:italic;color:var(--blue)}
+.hero .kicker{margin-bottom:14px}
 h1 sup,.note sup{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--blue);vertical-align:super;line-height:0;margin-left:2px}
 h2{font-size:34px;line-height:1.1}
 h3{font-size:24px;line-height:1.2;font-weight:400;letter-spacing:-.01em}
@@ -39,6 +40,7 @@ p,li{text-wrap:pretty}
 .doc-bar{border-bottom:1px solid var(--ink);font:500 11px/1.5 var(--sans);letter-spacing:.08em;text-transform:uppercase}
 .doc-bar .wrap{display:flex;flex-direction:column;gap:2px;padding-top:8px;padding-bottom:8px}
 .doc-bar span:last-child{color:var(--blue)}
+@media(max-width:860px){.doc-bar span:first-child{display:none}.doc-bar span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 @media(min-width:861px){.doc-bar{font-size:12px}.doc-bar .wrap{flex-direction:row;justify-content:space-between;gap:16px;padding-top:10px;padding-bottom:10px}}
 
 /* Шапка */
