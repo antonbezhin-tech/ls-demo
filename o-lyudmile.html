@@ -17,20 +17,23 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Людмила Шульпина", "jobTitle": "Арбитражный управляющий", "address": {"@type": "PostalAddress", "addressLocality": "Владимир", "addressCountry": "RU"}, "sameAs": ["https://t.me/shulpina_mila"]}</script>
 </head>
 <body>
-<header class="site-header"><div class="wrap">
-  <a class="logo" href="index.html"><span class="logo-name">Людмила Шульпина</span><span class="logo-sub">арбитражный управляющий</span></a>
-  <nav class="nav"><a href="bankrotstvo.html">Банкротство</a><a href="restrukturizaciya.html">Реструктуризация</a><a href="o-lyudmile.html" aria-current="page">О Людмиле</a><a href="voprosy.html">Вопросы</a></nav>
-  <a class="header-cta" href="index.html#diagnostika">Консультация</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html">Людмила Шульпина<small>арбитражный управляющий</small></a>
+  <nav class="nav-d" aria-label="Разделы"><a href="bankrotstvo.html">Банкротство</a><a href="restrukturizaciya.html">Реструктуризация</a><a href="o-lyudmile.html" aria-current="page">О Людмиле</a><a href="voprosy.html">Вопросы</a></nav>
+  <div class="head-r">
+    <details class="menu"><summary>Меню</summary><div class="drop"><a href="bankrotstvo.html">Банкротство</a><a href="restrukturizaciya.html">Реструктуризация</a><a href="o-lyudmile.html" aria-current="page">О Людмиле</a><a href="voprosy.html">Вопросы</a></div></details>
+    <a class="btn header-cta" href="index.html#diagnostika">Консультация</a>
+  </div>
 </div></header>
 <main>
 <section class="hero" data-screen="first"><div class="wrap hero-grid">
   <div>
-    <h1>Людмила Шульпина, арбитражный управляющий</h1>
+    <h1>Людмила Шульпина, <em>арбитражный управляющий</em></h1>
     <p class="lead">Ведём дела о банкротстве граждан с [УТОЧНИТЬ: год по документам] года. Работаем удалённо по всей России.</p>
-    <p><a class="btn" href="#zapis">Записаться на консультацию</a></p>
+    <div class="cta"><a class="btn" href="#zapis">Записаться на консультацию</a></div>
     <p class="warn-281" data-warn="first">Банкротство влечет негативные последствия, в том числе ограничения на получение кредита и повторное банкротство в течение пяти лет. Предварительно обратитесь к своему кредитору и в МФЦ.</p>
   </div>
-  <div class="card">
+  <div class="hero-aside">
     <h2>Документы</h2>
     <ul>
       <li>Арбитражный управляющий, член НПС СОПАУ «Альянс управляющих»</li>
@@ -41,15 +44,19 @@
   </div>
 </div></section>
 
-<section><div class="wrap grid-2">
-  <div>
-    <h2>Как я работаю</h2>
+<section class="sec"><div class="wrap sec-grid">
+  <div class="sec-head"><h2>Как я работаю</h2></div>
+  <div class="prose">
     <p>На первой встрече разбираю документы и объясняю, какая процедура по закону возможна, что она означает для имущества и дохода и какие у неё последствия. Если процедура вам не подходит, говорю об этом на консультации.</p>
     <p>Этапы, сроки и стоимость работы записаны в договоре. Во время дела объясняю каждый шаг простыми словами и отвечаю в мессенджерах.</p>
+    <p class="callout">Меня можно проверить: найдите мою фамилию в реестре арбитражных управляющих.</p>
   </div>
-  <div>
-    <h2>Что я не делаю</h2>
-    <ul>
+</div></section>
+
+<section class="sec alt"><div class="wrap sec-grid">
+  <div class="sec-head"><h2>Что я не делаю</h2></div>
+  <div class="prose">
+    <ul class="cross">
       <li>Не обещаю итог дела: решение принимает суд.</li>
       <li>Не советую скрывать имущество или доход: это нарушение закона и риск для дела.</li>
       <li>Не называю цену до разбора ситуации.</li>
@@ -57,10 +64,12 @@
   </div>
 </div></section>
 
-<section id="zapis"><div class="wrap grid-2">
+<section class="contact" id="zapis"><div class="wrap">
   <div>
     <h2>Записаться на консультацию</h2>
-    <p>Telegram: <a href="https://t.me/shulpina_mila">t.me/shulpina_mila</a><br>MAX: [УТОЧНИТЬ: ссылка MAX]</p>
+    <p class="msg">Напишите, и мы договоримся о времени.</p>
+    <div class="ways"><a class="btn" href="https://t.me/shulpina_mila"><small>Telegram</small>t.me/shulpina_mila</a></div>
+    <p class="ways-note">MAX: [УТОЧНИТЬ: ссылка MAX]</p>
   </div>
   <form class="lead-form" data-form-name="o-lyudmile" data-endpoint="[УТОЧНИТЬ: адрес приёма заявок amoCRM]" novalidate>
   <input type="hidden" name="site_form" value="site_form">

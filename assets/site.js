@@ -74,6 +74,14 @@
     });
   });
 
+  // Мобильное меню: закрываем по клику снаружи, по Escape и по ссылке
+  var menu = document.querySelector("details.menu");
+  if (menu) {
+    document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); } });
+    menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { menu.open = false; }); });
+  }
+
   // Заглушки [УТОЧНИТЬ] в прототипе подсвечиваем
   var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   var hits = [], node;
