@@ -1,0 +1,194 @@
+/* Направление А «Тёплое редакционное» (по мотивам 11parfum, под ЦА с долгами). Слой поверх style.css. */
+/* Запасные шрифты с подстройкой метрик: строки H1 не прыгают при подгрузке веб-шрифта */
+@font-face{font-family:"Spectral-fb";font-style:normal;src:local("Times New Roman"),local("TimesNewRomanPSMT"),local("Liberation Serif"),local("LiberationSerif");size-adjust:107.4%}
+@font-face{font-family:"Spectral-fb";font-style:italic;src:local("Times New Roman Italic"),local("TimesNewRomanPS-ItalicMT"),local("Liberation Serif Italic"),local("LiberationSerif-Italic");size-adjust:99.5%}
+@font-face{font-family:"Spectral-fb2";font-style:normal;src:local("DejaVu Serif"),local("DejaVuSerif");size-adjust:85.5%}
+@font-face{font-family:"Spectral-fb2";font-style:italic;src:local("DejaVu Serif Italic"),local("DejaVuSerif-Italic"),local("DejaVu Serif");size-adjust:81.6%}
+@font-face{font-family:"Geologica-fb";font-weight:100 500;src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("LiberationSans");size-adjust:107.6%}
+@font-face{font-family:"Geologica-fb";font-weight:600 900;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold");size-adjust:103.1%}
+@font-face{font-family:"Geologica-fb2";font-weight:100 500;src:local("DejaVu Sans"),local("DejaVuSans");size-adjust:93.2%}
+@font-face{font-family:"Geologica-fb2";font-weight:600 900;src:local("DejaVu Sans Bold"),local("DejaVuSans-Bold");size-adjust:87.7%}
+:root{
+  --paper:#F3EFE8; --white:#FAF8F4; --ink:#1F1E1C; --text-2:#34322F; --muted:#5C5852; --line:#DCD5CA;
+  --blue:#8A4B2E; --blue-d:#6E3A22; --blue-soft:#EBE1D6; --warn:#ECE6DC;
+  --dark:#2A2927; --dark-2:#3A3835; --on-dark:#F3EFE8; --on-dark-2:#CFC8BD; --clay-l:#D9A585;
+  --serif:"Spectral","Spectral-fb","Spectral-fb2",Georgia,serif;
+  --sans:"Geologica","Geologica-fb","Geologica-fb2",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+body{font-size:18px;line-height:1.7}
+.kicker,.hero-aside h2,.paper .hd,.cell .num{font:500 12px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+h1 em{color:var(--blue)}
+h2{font-weight:300}
+
+/* Плашка и шапка: воздух, без жирных рамок */
+.doc-bar{border-bottom:1px solid var(--line);color:var(--muted);letter-spacing:.14em}
+.doc-bar span:last-child{color:var(--text-2)}
+.top{background:transparent}
+.top .wrap{border-bottom:0}
+.brand{font-weight:300}
+.brand small{letter-spacing:.2em}
+.nav-d a{font-weight:400;letter-spacing:.02em}
+.nav-d a:hover,.nav-d a[aria-current="page"]{border-bottom-color:var(--ink)}
+details.menu summary{border:1px solid var(--ink);font-weight:400;letter-spacing:.16em;font-size:12px}
+
+/* Кнопки: тонкая графитовая с подписью в разрядку и стрелкой */
+.btn,button[type="submit"],.quiz-next,.quiz-back{border-width:1px;min-height:56px;padding:0 28px;font:500 13px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.btn::after,button[type="submit"]::after,.quiz-next::after{content:"\2192";font:300 20px/1 var(--sans);letter-spacing:0;transition:transform .2s ease}
+.btn:hover::after,button[type="submit"]:hover::after,.quiz-next:hover::after{transform:translateX(4px)}
+.cta .btn:not(.ghost),button[type="submit"],.quiz-next{background:var(--ink);border-color:var(--ink);color:var(--on-dark)}
+.cta .btn:not(.ghost):hover,button[type="submit"]:hover,.quiz-next:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn:hover,.quiz-back:hover{background:var(--ink);color:var(--on-dark)}
+
+/* Первый экран: крупно, спокойно, фото как главный образ */
+.hero{border-bottom:0;padding:24px 0 48px}
+.hero .lead{color:var(--text-2)}
+.warn-281{background:transparent;border-left:1px solid var(--muted);padding:4px 0 4px 16px;font-size:14px;color:var(--muted)}
+.photo{grid-template-columns:1fr;gap:14px}
+.frame{aspect-ratio:4/5;background:radial-gradient(120% 90% at 30% 20%,#E9E1D5 0%,#D8CDBE 55%,#C7B9A6 100%);padding:14px;max-height:62vh}
+.photo figcaption{border-top:1px solid var(--line);color:var(--muted)}
+.photo figcaption b{font-weight:300;font-size:22px}
+@media(min-width:861px){
+  .hero{padding:56px 0 96px}
+  .hero-grid{grid-template-columns:minmax(0,1fr) 400px;gap:72px;align-items:end}
+  h1{font-size:72px;line-height:1.02}
+  .hero .lead{font-size:20px;line-height:1.65}
+}
+@media(min-width:1100px){h1{font-size:80px}.hero-grid{grid-template-columns:minmax(0,1fr) 440px}}
+
+/* Секции: тонкие линии вместо чернильных рамок, больше воздуха */
+.sec{border-bottom:1px solid var(--line)}
+.sec.alt{background:var(--white)}
+.sec.sage{background:var(--blue-soft);border-bottom-color:var(--line)}
+.prose ul,.steps,.faq,.fears-list,.paper .hd{border-top-color:var(--line)}
+.prose ul li::before{background:var(--blue);width:18px;height:1px}
+.callout{border-left:1px solid var(--blue);font-size:24px;line-height:1.5}
+@media(min-width:861px){.sec{padding:112px 0}.sec-grid{grid-template-columns:340px minmax(0,1fr);gap:80px}h2{font-size:52px}.sec-grid .sec-head h2{font-size:46px}}
+
+.fear .n,.paper li::before,.steps li::before,.hero-aside li::before{color:var(--blue);font-weight:300}
+.fear h3{font-weight:300}
+
+/* Два пути: карточки на тонкой сетке */
+.paths{border:1px solid var(--line);background:var(--white)}
+.path{border-bottom:1px solid var(--line)}
+.path .more{font:500 13px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px}
+.path .more::after{content:" \2192"}
+.path.quiet{background:var(--warn)}
+@media(min-width:861px){.path:first-child{border-right:1px solid var(--line)}.path{padding:44px 40px}}
+
+/* «Что вы узнаете до договора»: единственная тёмная полоса для ритма */
+.know{background:var(--dark);color:var(--on-dark);border-bottom:0}
+.know .intro{color:var(--on-dark-2)}
+.paper .hd{color:var(--on-dark-2);border-bottom-color:#55514C}
+.paper li{border-bottom-color:#4A4743}
+.paper li::before{color:var(--clay-l)}
+.stub p{color:var(--on-dark)}
+@media(min-width:861px){.know{padding:112px 0}}
+
+/* Приёмная и формы */
+.reception{border:1px solid var(--line);background:var(--white)}
+.cell{border-bottom-color:var(--line)}
+@media(min-width:861px){.cell{border-right-color:var(--line);padding:40px 34px}}
+.lead-form input[type="text"],.lead-form input[type="tel"]{border-bottom:1px solid var(--ink)}
+.quiz{border:1px solid var(--line);background:var(--white)}
+.opt{border-color:var(--line);background:var(--paper)}
+.opt:has(input:checked){border-color:var(--ink);background:var(--blue-soft)}
+.req{border:1px solid var(--line);background:var(--white)}
+
+.site-footer{border-top:1px solid var(--line);background:var(--dark);color:var(--on-dark-2)}
+.site-footer strong{color:var(--on-dark)}
+.site-footer a{color:var(--on-dark)}
+.site-footer .warn-281{color:var(--on-dark-2);border-left-color:var(--on-dark-2)}
+
+.dock{background:var(--paper);border-top:1px solid var(--line)}
+.dock a{font:500 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.dock a:first-child{background:var(--ink);border-right-color:var(--ink);color:var(--on-dark)}
+
+/* круг 2: колонка H1 шире, плашка реестра без обрезки на телефоне */
+@media(min-width:861px){.hero-grid{grid-template-columns:minmax(0,1fr) 340px;gap:80px}h1{font-size:68px}}
+@media(min-width:1100px){.hero-grid{grid-template-columns:minmax(0,1fr) 380px}h1{font-size:76px}}
+.doc-bar{letter-spacing:.06em}
+@media(max-width:860px){.brand small{letter-spacing:.12em}.doc-bar{letter-spacing:.02em}}
+
+/* меньше движения: стрелка кнопок не ездит */
+@media(prefers-reduced-motion:reduce){.btn::after,button[type="submit"]::after,.quiz-next::after{transition:none}.btn:hover::after,button[type="submit"]:hover::after,.quiz-next:hover::after{transform:none}}
+
+/* тач-цель от 44px у ссылок «подробнее» */
+.path .more{display:inline-flex;align-items:center;min-height:44px}
+
+/* портрет в рамке: заполняет её целиком, лицо по центру */
+.frame picture{display:block;width:100%;height:100%}
+.frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+
+/* Главная по композиции Б с колонками из В, 18.11.2026 */
+.hero-b{padding:24px 0 48px;border-bottom:0}
+.hero-b-grid{display:grid;gap:32px;align-items:center}
+.hero-b .lead{margin:18px 0 24px}
+.who{display:flex;gap:14px;align-items:center;margin-bottom:22px}
+.who img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+.who b{display:block;font:400 19px/1.2 var(--serif)}
+.who span{font-size:14px;color:var(--muted)}
+.quiz-card .quiz{background:var(--white);border:0;box-shadow:0 30px 80px -40px rgba(60,40,20,.35);border-radius:4px;padding:24px 18px 20px}
+.quiz-card .quiz-step legend{font-size:24px}
+.quiz-note{font-size:13px;color:var(--muted);margin-top:14px}
+.three-sec{padding:0 0 56px}
+.three{display:grid;border-top:1px solid var(--ink)}
+.three article{padding:26px 0;border-bottom:1px solid var(--line)}
+.three .ic,.uznaete .kicker,.chat .kicker,.night .kicker{font:500 12px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.three h3{font:300 34px/1.05 var(--serif);margin:14px 0 16px}
+.three .yes{display:inline-block;font:500 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:8px 10px;margin-bottom:14px}
+.yes.g{background:#e3e8df;color:#4f5c4c}
+.yes.r{background:#f1e2d8;color:var(--blue)}
+.three p{font-size:16px;line-height:1.6;color:var(--text-2)}
+.uznaete{background:var(--blue-soft);padding:64px 0}
+.uznaete h2,.chat h2,.night h2{font:300 36px/1.08 var(--serif);margin:12px 0 12px}
+.uznaete .sub{color:var(--text-2);margin-bottom:30px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--white);padding:22px 18px 22px;min-height:170px;display:flex;flex-direction:column}
+.tile:last-child{grid-column:1/-1;min-height:0}
+.tile .n{font:300 46px/1 var(--serif);color:var(--clay-l)}
+.tile p{margin-top:auto;padding-top:14px;font-size:16px;line-height:1.5}
+.uznaete .after{margin-top:28px;max-width:760px;font:300 italic 21px/1.45 var(--serif);color:var(--ink)}
+.chat{padding:64px 0}
+.chat-grid{display:grid;gap:28px}
+.chat .side p{color:var(--text-2);max-width:360px}
+.thread{display:grid;gap:16px}
+.thread .q{justify-self:end;max-width:90%;background:var(--ink);color:var(--on-dark);padding:14px 20px;border-radius:20px 20px 4px 20px;font:300 italic 20px/1.3 var(--serif)}
+.thread .a{display:flex;gap:12px}
+.thread .a img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 20%;flex:none}
+.thread .a p{background:var(--white);padding:14px 20px;border-radius:20px 20px 20px 4px;font-size:16px;line-height:1.6}
+.dognav{padding:0 0 64px}
+.dognav .wrap{padding:0}
+.night{background:var(--dark);color:var(--on-dark);display:grid;gap:24px;padding:52px 16px}
+.night h2{color:#fff}
+.night h2 em{color:#e8c9a8}
+.night .sub{color:var(--on-dark-2)}
+.night ul{list-style:none}
+.night li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:17px}
+.night li::before{content:"\2713";color:#e8c9a8}
+.night .end{font:300 italic 24px/1.3 var(--serif);color:#e8c9a8;margin:22px 0 12px}
+@media(min-width:861px){
+  .hero-b{padding:48px 0 96px}
+  .hero-b-grid{grid-template-columns:1.05fr .95fr;gap:72px}
+  .hero-b h1{font-size:64px}
+  .quiz-card .quiz{padding:40px 40px 34px}
+  .quiz-card .quiz-step legend{font-size:30px}
+  .three-sec{padding-bottom:110px}
+  .three{grid-template-columns:repeat(3,1fr)}
+  .three article{padding:34px 34px 40px 0;border-bottom:0;border-right:1px solid var(--line)}
+  .three article+article{padding-left:34px}
+  .three article:last-child{border-right:0}
+  .three h3{font-size:44px}
+  .uznaete,.chat{padding:110px 0}
+  .uznaete h2,.chat h2,.night h2{font-size:52px}
+  .tiles{grid-template-columns:repeat(5,1fr);gap:14px}
+  .tile{min-height:230px;padding:26px 22px 28px}
+  .tile:last-child{grid-column:auto;min-height:230px}
+  .uznaete .after{font-size:24px}
+  .chat-grid{grid-template-columns:.8fr 1.2fr;gap:72px}
+  .thread .q{max-width:78%;font-size:22px}
+  .thread .a{max-width:86%}
+  .dognav{padding-bottom:110px}
+  .dognav .wrap{padding:0 40px}
+  .night{grid-template-columns:.9fr 1.1fr;gap:60px;padding:72px}
+  .night li{font-size:18px}
+}
